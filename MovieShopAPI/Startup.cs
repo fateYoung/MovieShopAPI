@@ -12,6 +12,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using MovieShop.Data;
+using MovieShop.Data.Repository;
+using MovieShop.Data.RepositoryInterfaces;
+using MovieShop.Services;
+using MovieShop.Services.ServiceInterfaces;
 
 namespace MovieShopAPI
 {
@@ -46,6 +50,17 @@ namespace MovieShopAPI
                         );
                 }
             );
+
+            services.AddScoped<IGenreRepository, GenreRepository>();
+            services.AddScoped<IGenreService, GenreService>();
+
+            services.AddScoped<IMovieRepository, MovieRepository>();
+            services.AddScoped<IMovieService, MovieService>();
+
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IUserRepository, UserRepository>();
+
+            services.AddScoped<ICryptoService, CryptoService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

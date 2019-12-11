@@ -21,6 +21,7 @@ namespace MovieShop.Data.Repository
         {
             _dbContext.Set<T>().Add(entity);
             await _dbContext.SaveChangesAsync();
+
             return entity;
         }
 
