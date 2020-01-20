@@ -68,10 +68,10 @@ namespace MovieShopAPI.Controllers
             {
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
                 new Claim(ClaimTypes.Email, user.Email),
-                // new Claim(JwtRegisteredClaimNames.Birthdate, user.DateOfBirth?.ToShortDateString()),
+                //new Claim(JwtRegisteredClaimNames.Birthdate, user.DateOfBirth?.ToShortDateString()),
                 //new Claim(JwtRegisteredClaimNames.GivenName, user.FirstName),
                 //new Claim("alias", user.FirstName[0] + user.LastName[0].ToString()),
-                //new Claim(JwtRegisteredClaimNames.FamilyName, user.LastName)
+                //new Claim(JwtRegisteredClaimNames.FamilyName, user.LastName
             };
             // var roles =  _userService.GetUserRoles(user.Email).GetAwaiter().GetResult();
             foreach (var role in roles)

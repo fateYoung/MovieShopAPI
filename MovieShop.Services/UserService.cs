@@ -34,7 +34,7 @@ namespace MovieShop.Services
                 Salt = salt,
                 HashedPassword = hashedPassword,
                 FirstName = firstName,         
-                LastName = lastName
+                LastName = lastName,
             };
 
             return await _userRepository.AddAsync(dbUser);            

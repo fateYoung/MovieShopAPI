@@ -32,6 +32,13 @@ namespace MovieShopAPI.Controllers
             return Ok(movies);
         }
 
+        [Route("top30revenue")]
+        public async Task<IActionResult> GetTop30GrossingMoviesAsync()
+        {
+            var movies = await _movieService.GetTopGrossingMoviesAsync();
+            return Ok(movies);
+        }
+
         [Route("top20favorite")]
         public async Task<IActionResult> Get20TopFavoriteMoviesAsync()
         {
